@@ -1,0 +1,21 @@
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(253, 240, 224);
+}
+.titulo{
+    color: violet;
+    text-align: center;
+    background-color: rgb(243, 219, 253);
+    border: 5px double rgb(179, 208, 247);
+    border-radius: 10px;
+    margin: 30px;
+    padding: 15px;
+}
+#pantallaTotal{
+    background-color: rgb(243, 219, 253);
+    border: 5px inset rgb(179, 208, 247);
+    border-radius: 10px;
+    margin: 30px;
+    padding: 20px;
+    text-align: right;
+}

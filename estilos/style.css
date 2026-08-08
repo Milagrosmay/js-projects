@@ -1,0 +1,67 @@
+#titulo{
+    color: tomato;
+}
+
+p.texto{ /* parrafo  donde la clase tenga la palabra texto */
+    color: slateblue;
+}
+
+p.especial{ /* parrafo donde la clase tenga la palabra especial */
+    color: darkorange;
+}
+
+div p { /* parrafo dentro de un div */
+    color: darkgreen;
+}
+
+div h2, div h3{ /* h2 dentro de un div */
+    color: blueviolet;
+}
+
+*{
+    font-size: 24px;
+    color: black;
+}
+.color{
+    /* border: 5px violet inset; */
+    /*
+    dotted
+    dashed
+    solid
+    double
+    groove
+    ridge
+    inset
+    outset
+    none
+    hidden
+    */
+    border-style: solid;
+    border-color: violet;
+    border-radius: 5px;
+    border-width: 10px;
+}
+
+#fondo{
+    background-color: rgba(255, 0, 0);
+    height: 200px;
+    background: #f00 url('coffee.png') repeat-y center top; /*color de fondo, imagen, no repetir, posicionar*/
+    background-size: 100px 100px; /* tamaño de la imagen de fondo */
+}
+.margen{
+    background-color: rgb(238, 198, 169);
+    margin: 15px; /* top right bottom left */
+    padding: 30px 15px 5px; /* top right bottom left */
+    border:solid 5px rgb(8, 17, 155);
+    height: 100px;
+    width: 50px;
+    overflow: scroll; /* ocultar contenido que se salga del div */
+    outline: 5px solid rgb(255, 0, 0); /* borde fuera del div */
+}
+
+.text{
+    font-family:'rubik spray paint'; /* tipo de letra */
+    text-align: center;
+    text-decoration: overline; /* none, underline, overline, line-through */
+    text-shadow: 3px 5px 5px blue; /* horizontal vertical color */
+    }

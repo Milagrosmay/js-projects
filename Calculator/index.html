@@ -13,6 +13,7 @@
 
     <button onclick="borrarTodo()">ac</button>
     <button onclick="borrar()">C</button>
+    <button onclick="agregarOperador('%')">%</button>
     <button onclick="agregarOperador('/')">/</button>
     <br />
     <br />
@@ -92,6 +93,10 @@
             break;
           case "/":
             total = nu1 / nu2;
+
+            break;
+          case "%":
+            total = (nu1 * nu2)/100;
 
             break;
 

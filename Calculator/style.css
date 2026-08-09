@@ -1,40 +1,42 @@
+ 
 * {
-  font-family: "Bagel Fat One", system-ui;
+  font-family: "Bagel Fat One", system-ui; /*fuente general*/
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
+
+  min-height: 100vh; /* Hace que el body ocupe como minimo toda la altura de la pantalla */
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: #F8EEDC;
+  background-color: #f8eedc;
 }
 
 .contenedor {
-  display: flex;
-  flex-direction: column;
+  display: flex; /*organiza los elementos de forma flexible*/
+  flex-direction: column; /*organizar los elementos uno debajo del otro*/
   align-items: center;
 }
 
 .calculadora {
   width: 320px;
   padding: 20px;
-  background-color: #EED8F7;
+  background-color: #eed8f7;
   box-shadow: 0 5px 10px rgb(161, 153, 153);
   border-radius: 10px;
 }
 
 .titulo {
   font-family: "Bagel Fat One", system-ui;
-  color: #4B5275;
-  font-weight: 400;
+  color: #4b5275;
+  font-weight: 400; /*define grosor del texto*/
   text-align: center;
   width: 100%;
   height: 50px;
-  background: #D5DBF7;
+  background: #d5dbf7;
   box-shadow: 0 5px 10px rgb(199, 149, 247);
   border-radius: 10px;
   margin: 30px;
@@ -42,11 +44,11 @@ body {
 }
 
 #pantallaTotal {
-  box-sizing: border-box;
+  box-sizing: border-box; /* hace que el contenido no aumente el tamaño total del elemento*/
   width: 100%;
   height: 80px;
-  background-color: #DFF1F7;
-  color: #30364A;
+  background-color: #dff1f7;
+  color: #30364a;
 
   padding: 10px;
 
@@ -58,9 +60,9 @@ body {
 }
 
 .botones {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  display: grid; /*organiza los elementos en filas y columnas*/
+  grid-template-columns: repeat(4, 1fr); /*crea 4 columnas del mismo ancho*/
+  gap: 10px; /* espacio de 10px entre los botones */
   justify-content: center;
   background-color: rgb(243, 219, 253);
 
@@ -74,16 +76,16 @@ body {
 
 .botones button {
   background-color: rgb(217, 183, 233);
-  border: 5px  #8B6F9D;
+  border: none;
   box-shadow: 0 2px 5px rgb(131, 104, 134);
   border-radius: 10px;
   padding: 15px;
   font-size: 30px;
-  cursor: pointer;
-  transition: all 0.4s;
+  cursor: pointer; 
+  transition: all 0.4s; /* hace que los cambios en las propiedades sean leves */
 }
 
 .botones button:hover {
-  background-color: rgb(234, 179, 247);
-  transform: translateY(-3px);
+  background-color: rgb(234, 179, 247); /* cambia el color del botón cuando movemos el mouse encima */
+  transform: translateY(-3px);  /* mueve el botón 3px hacia arriba cuando pasamos el mouse */
 }

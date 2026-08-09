@@ -7,38 +7,39 @@
     <title>Basic Calculator</title>
   </head>
   <body>
-    <h1 class="titulo">Basic Calculator</h1>
+    <div class="contenedor">
+      <h1 class="titulo">Basic Calculator</h1>
 
-    <p id="pantallaTotal"></p>
+      <div class="calculadora">
+        <p id="pantallaTotal"></p>
 
-    <button onclick="borrarTodo()">ac</button>
-    <button onclick="borrar()">C</button>
-    <button onclick="agregarOperador('%')">%</button>
-    <button onclick="agregarOperador('/')">/</button>
-    <br />
-    <br />
-    <button onclick="agregarNumero('7')">7</button>
-    <button onclick="agregarNumero('8')">8</button>
-    <button onclick="agregarNumero('9')">9</button>
-    <button onclick="agregarOperador('x')">x</button>
-    <br />
-    <br />
-    <button onclick="agregarNumero('4')">4</button>
-    <button onclick="agregarNumero('5')">5</button>
-    <button onclick="agregarNumero('6')">6</button>
-    <button onclick="agregarOperador('-')">-</button>
-    <br />
-    <br />
-    <button onclick="agregarNumero('1')">1</button>
-    <button onclick="agregarNumero('2')">2</button>
-    <button onclick="agregarNumero('3')">3</button>
-    <button onclick="agregarOperador('+')">+</button>
-    <br />
-    <br />
-    <button onclick="agregarNumero('0')">0</button>
-    <button onclick="obtenerTotal()">=</button>
-    <br />
-    
+        <div class="botones">
+          <button onclick="borrarTodo()">ac</button>
+          <button onclick="borrar()">C</button>
+          <button onclick="agregarOperador('%')">%</button>
+          <button onclick="agregarOperador('/')">/</button>
+
+          <button onclick="agregarNumero('7')">7</button>
+          <button onclick="agregarNumero('8')">8</button>
+          <button onclick="agregarNumero('9')">9</button>
+          <button onclick="agregarOperador('x')">x</button>
+
+          <button onclick="agregarNumero('4')">4</button>
+          <button onclick="agregarNumero('5')">5</button>
+          <button onclick="agregarNumero('6')">6</button>
+          <button onclick="agregarOperador('-')">-</button>
+
+          <button onclick="agregarNumero('1')">1</button>
+          <button onclick="agregarNumero('2')">2</button>
+          <button onclick="agregarNumero('3')">3</button>
+          <button onclick="agregarOperador('+')">+</button>
+
+          <button onclick="agregarNumero('0')">0</button>
+          <button onclick="obtenerTotal()">=</button>
+        </div>
+      </div>
+    </div>
+
     <script>
       let num1 = "";
       let num2 = "";
@@ -68,8 +69,8 @@
 
       function obtenerTotal() {
         if (!num1 || !signo || !num2) {
-            alert("Realice la operacion")
-            return;
+          alert("Realice la operacion");
+          return;
         }
         //console.log(num1, num2, total, signo);
         let total = 0;
@@ -96,7 +97,7 @@
 
             break;
           case "%":
-            total = (nu1 * nu2)/100;
+            total = (nu1 * nu2) / 100;
 
             break;
 
@@ -104,30 +105,28 @@
             alert("ERROR: seleccione alguna de las operaciones");
             break;
         }
-         num1 = total;
-         signo = "";
-         num2 = "";
+        num1 = total;
+        signo = "";
+        num2 = "";
 
         actualizarPantalla();
       }
 
       function borrarTodo() {
-         num1 = "";
-         signo = "";
-         num2 = "";
+        num1 = "";
+        signo = "";
+        num2 = "";
 
-         actualizarPantalla();
+        actualizarPantalla();
       }
       function borrar() {
         if (num2) {
-            num2 = num2.slice(0, -1);
-            
-        }else if(signo){
-            signo = "";
-
-        }else{
-            num1 = num1.slice(0, -1);
-        }   
+          num2 = num2.slice(0, -1);
+        } else if (signo) {
+          signo = "";
+        } else {
+          num1 = num1.slice(0, -1);
+        }
         actualizarPantalla();
       }
 

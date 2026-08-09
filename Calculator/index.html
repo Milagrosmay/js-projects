@@ -2,8 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="fav.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/Calculator/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Basic Calculator</title>
   </head>
   <body>
@@ -17,7 +25,7 @@
           <button onclick="borrarTodo()">ac</button>
           <button onclick="borrar()">C</button>
           <button onclick="agregarOperador('%')">%</button>
-          <button onclick="agregarOperador('/')">/</button>
+          <button onclick="agregarOperador('÷')">÷</button>
 
           <button onclick="agregarNumero('7')">7</button>
           <button onclick="agregarNumero('8')">8</button>
@@ -92,12 +100,14 @@
             total = nu1 * nu2;
 
             break;
-          case "/":
+          case "÷":
             total = nu1 / nu2;
+            total = total.toFixed(2);
 
             break;
           case "%":
             total = (nu1 * nu2) / 100;
+            total = total.toFixed(2);
 
             break;
 
@@ -105,7 +115,7 @@
             alert("ERROR: seleccione alguna de las operaciones");
             break;
         }
-        num1 = total;
+        num1 = total + "";
         signo = "";
         num2 = "";
 
@@ -125,7 +135,7 @@
         } else if (signo) {
           signo = "";
         } else {
-          num1 = num1.slice(0, -1);
+          num1 = num1?.slice(0, -1);
         }
         actualizarPantalla();
       }

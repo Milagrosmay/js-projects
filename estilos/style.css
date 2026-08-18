@@ -122,11 +122,56 @@ tr:nth-child(even) {
 }
 
 span{
-  /* display: block; */
-  display: none;
+  display: block;
+  /* display: none; */
+  /* visibility: hidden; no se muestran elementos */
+  max-width: 300px;
+  background-color: lightpink;
+
 }
 
 .inline{
   display: inline;
 }
 
+#position{
+  /* position: fixed; fijado */
+  /* position: absolute;  */
+  position: sticky; 
+  left: 20px;
+  top: 30px;
+}
+
+.left{
+  float: left;
+  width: 200px;
+  height: 200px;
+}
+
+.container{
+  height: 200px;
+}
+
+.right{
+  float: right;
+}
+
+.column{
+  margin: 0 ;
+  padding: 10px 0px;
+  width: 33.3%;
+}
+
+.inline-block{
+  display: inline-block;
+  height: 55px;
+  background-color: darkmagenta;
+}
+.center{
+  width: 200px;
+  margin: 0 auto;
+  background-color: aquamarine;
+  text-align: center;
+  padding: 50px 0;
+
+}

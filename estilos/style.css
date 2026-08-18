@@ -121,3 +121,12 @@ tr:nth-child(even) {
   background-color: #f1cccc;
 }
 
+span{
+  /* display: block; */
+  display: none;
+}
+
+.inline{
+  display: inline;
+}
+

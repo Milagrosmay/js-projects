@@ -1,13 +1,17 @@
+*{
+    box-sizing: border-box;
+}
 body{
     background-color: lightyellow;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
+    
 }
 
 .grid-layout{
     height: 600px;
     display: grid;
-    grid-template-columns: 80% auto;
+    grid-template-columns: 80% 20%;
     grid-template-rows: 20% 10% 60% auto;
     border: 1px solid black;
 }
@@ -17,9 +21,8 @@ body{
     border-radius: 10px;
     background-color: aquamarine;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     margin: 5px;
-    gap: 10px;
   
 }
 

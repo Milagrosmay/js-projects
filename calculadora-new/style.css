@@ -3,7 +3,7 @@
 }
 body {
   margin: 0;
-  background-color: lightgoldenrodyellow;
+  background-color:  #fff5fa;
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -16,8 +16,8 @@ body {
   text-align: center;
   width: 60%;
   height: 50px;
-  background: #f5a5f5;
-  box-shadow: 0 5px 10px rgb(205, 4, 250);
+  background:  #e8d7f1;
+  box-shadow: 0 5px 10px #c9afd5;
   border-radius: 10px;
   padding: 20px;
   margin: 30px 0 10px 0;
@@ -29,8 +29,8 @@ body {
   padding: 20px;
   margin-top: 20px;
 
-  background-color: rgb(245, 169, 232);
-  box-shadow: 0 5px 10px rgb(161, 153, 153);
+  background-color: #cdb4db;
+  box-shadow: 0 5px 10px #b69ac2;
   border-radius: 10px;
 }
 
@@ -38,13 +38,13 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 80px;
-  background-color: lightyellow;
-  color: black;
+  background-color:  #fdebf5;
+  color: #594568;
   padding: 10px;
 
   font-size: 30px;
   text-align: right;
-  border: 5px inset rgb(234, 179, 247);
+  border: 5px inset #a98bc4;
   border-radius: 10px;
 }
 
@@ -53,19 +53,20 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   
-  border: 5px solid rgb(252, 110, 221);
+  border: 5px solid #a98bc4;
   border-radius: 10px; 
 
   padding: 20px;
   margin: 10px auto;
   width: 260px;
-  
+  background-color: #d9c3e2;
+
 }
 
 .botones button {
-  background-color: rgb(253, 248, 255);
+  background-color: #f8e1f4;
   border: none;
-  box-shadow: 0 2px 5px  rgb(205, 4, 250);
+  box-shadow: 0 2px 5px  #a98bc4;
   border-radius: 50px;
   padding: 15px;
   font-size: 30px;
@@ -82,11 +83,7 @@ body {
 }
 
 .botones button:hover {
-  background-color: rgb(
-    234,
-    179,
-    247
-  ); 
+  background-color: #C5BAFF; 
   transform: translateY(
     -3px
   ); 

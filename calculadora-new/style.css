@@ -1,0 +1,94 @@
+*{
+  font-family: "Bagel Fat One", system-ui;
+}
+body {
+  margin: 0;
+  background-color: lightgoldenrodyellow;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo{
+  font-weight: 500;
+  text-align: center;
+  width: 60%;
+  height: 50px;
+  background: #f5a5f5;
+  box-shadow: 0 5px 10px rgb(205, 4, 250);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px 0 10px 0;
+
+}
+
+.calculadora {
+  width: 320px;
+  padding: 20px;
+  margin-top: 20px;
+
+  background-color: rgb(245, 169, 232);
+  box-shadow: 0 5px 10px rgb(161, 153, 153);
+  border-radius: 10px;
+}
+
+#pantallaTotal {
+  box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+  background-color: lightyellow;
+  color: black;
+  padding: 10px;
+
+  font-size: 30px;
+  text-align: right;
+  border: 5px inset rgb(234, 179, 247);
+  border-radius: 10px;
+}
+
+.botones{
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  
+  border: 5px solid rgb(252, 110, 221);
+  border-radius: 10px; 
+
+  padding: 20px;
+  margin: 10px auto;
+  width: 260px;
+  
+}
+
+.botones button {
+  background-color: rgb(253, 248, 255);
+  border: none;
+  box-shadow: 0 2px 5px  rgb(205, 4, 250);
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.igual{
+  grid-column: span 2;
+}
+
+.suma{
+  grid-row: span 2;
+}
+
+.botones button:hover {
+  background-color: rgb(
+    234,
+    179,
+    247
+  ); 
+  transform: translateY(
+    -3px
+  ); 
+}
+

@@ -9,10 +9,11 @@ body{
 }
 
 .grid-layout{
-    height: 600px;
+    height: 100vh;
     display: grid;
     grid-template-columns: 80% 20%;
-    grid-template-rows: 20% 10% 60% auto;
+    /* grid-template-rows: 20% 10% 60% auto; */
+    grid-template-rows: auto 1fr 6fr auto;
     border: 1px solid black;
 }
 
@@ -22,7 +23,8 @@ body{
     background-color: aquamarine;
     text-align: center;
     padding: 10px;
-    margin: 5px;
+    margin: 4px;
+    
   
 }
 
@@ -31,6 +33,7 @@ body{
     /* grid-row: 1 / span 2 ; empiece en la linea 1 y se espanda 2 filas */
     /* grid-column: 1/4 ; ocupe de la linea 1 a la 4 */
     background-color: bisque;
+    /* overflow-y: scroll; barra de scrollear verticalment */
 }
 
 .c2{

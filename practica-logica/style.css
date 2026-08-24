@@ -1,0 +1,74 @@
+* {
+  font-family: "Coiny", system-ui;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(184, 208, 253);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo {
+  font-weight: 500;
+  background-color: rgb(253, 225, 203);
+  border-radius: 15px;
+  width: 60%;
+  min-height: 50px;
+  padding: 10px;
+  box-shadow: 0 2px 5px #050505;
+}
+
+.formulario {
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  margin-top: 20px;
+
+  background-color: #ebdef3;
+  box-shadow: 0 5px 10px #000000;
+  border-radius: 15px;
+}
+
+label {
+  font-size: 30px;
+}
+
+input[type="number"] {
+  width: 80%;
+  padding: 14px;
+  margin: 8px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 5px 10px #7e7e7e;
+  color: #000000;
+  font-size: 20px;
+  transition: transform 0.4s;
+}
+
+input:focus {
+  outline: none;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px #443f3f;
+}
+
+button {
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 15px;
+  transition: 0.4s;
+  padding: 10px 20px;
+}
+button:hover {
+  background-color: #c5baff;
+  transform: translateY(-3px);
+}
+
+#pantallaResultado {
+  font-size: 20px;
+}

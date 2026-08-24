@@ -3,35 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Coiny&display=swap"
+      rel="stylesheet"
+    />
     <title>mayorQue</title>
   </head>
   <body>
-    <h1>MAYOR QUE</h1>
-    <form>
-      <label for="numero1">numero 1</label>
-      <br />
-      <input
-        type="number"
-        name="numero1"
-        id="numero1"
-        placeholder="Primer numero"
-      />
-      <br />
-      <br />
-      <label for="numero2">numero 2</label>
-      <br />
-      <input
-        type="number"
-        name="numero2"
-        id="numero2"
-        placeholder="Segundo numero"
-      />
-      <br />
-      <br />
-      <button type="button" onclick="mayorQue()" id="boton">Comparar</button>
-    </form>
-    <p id="pantallaResultado"></p>
-
+    <h1 class="titulo">MAYOR QUE</h1>
+    <div class="formulario">
+      <form>
+        <label for="numero1">numero 1</label>
+        <br />
+        <input
+          type="number"
+          name="numero1"
+          id="numero1"
+          placeholder="Primer numero"
+        />
+        <br />
+        <br />
+        <label for="numero2">numero 2</label>
+        <br />
+        <input
+          type="number"
+          name="numero2"
+          id="numero2"
+          placeholder="Segundo numero"
+        />
+        <br />
+        <br />
+        <button type="button" onclick="mayorQue()" id="boton">Comparar</button>
+      </form>
+      <p id="pantallaResultado"></p>
+    </div>
     <script>
       function mayorQue() {
         let numeroUno = document.getElementById("numero1").value;

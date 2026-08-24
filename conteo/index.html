@@ -1,13 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contador</title>
-</head>
-<body>
-    
-    
-    
-</body>
+  </head>
+  <body>
+    <h1>Conteo</h1>
+    <form>
+      <label for="conteoUsuario"
+        >indique el numero, para realizar el conteo</label
+      >
+      <br />
+      <br />
+      <input type="number" id="numero" placeholder="ingrese numero" />
+      <button type="button" onclick="contador()" id="boton">Contar</button>
+    </form>
+    <p id="pantalla"></p>
+
+    <script>
+      function contador() {
+        let numero = document.getElementById("numero").value;
+        let resultado = "";
+
+        if (!numero) {
+          alert("ingrese un numero para hacer el conteo");
+          return;
+        } else {
+          numero = parseInt(numero);
+          console.log("conteo: ");
+
+          for (let i = 0; i <= numero; i++) {
+            resultado += i + ", ";
+          }
+          document.getElementById("pantalla").innerHTML =
+            "Resultado: " + resultado;
+        }
+      }
+    </script>
+  </body>
 </html>

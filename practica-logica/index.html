@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mayorQue</title>
+  </head>
+  <body>
+    <h1>MAYOR QUE</h1>
+    <form>
+      <label for="numero1">numero 1</label>
+      <br />
+      <input
+        type="number"
+        name="numero1"
+        id="numero1"
+        placeholder="Primer numero"
+      />
+      <br />
+      <br />
+      <label for="numero2">numero 2</label>
+      <br />
+      <input
+        type="number"
+        name="numero2"
+        id="numero2"
+        placeholder="Segundo numero"
+      />
+      <br />
+      <br />
+      <button type="button" onclick="mayorQue()" id="boton">Comparar</button>
+    </form>
+    <p id="pantallaResultado"></p>
+
+    <script>
+      function mayorQue() {
+        let numeroUno = document.getElementById("numero1").value;
+        let numeroDos = document.getElementById("numero2").value;
+        let resultado = "No encontrado";
+
+        //validacion si hay valor
+
+        if (!numeroUno || !numeroDos) {
+          alert("Rellene todos los campos");
+          return;
+        } else {
+          numeroUno = parseInt(numeroUno);
+          numeroDos = parseInt(numeroDos);
+
+          if (numeroUno > numeroDos) {
+            resultado = numeroUno + " es mayor que " + numeroDos;
+          } else if (numeroDos > numeroUno) {
+            resultado = numeroDos + " es mayor que " + numeroUno;
+          } else if (numeroUno == numeroDos) {
+            resultado = "Ambos numeros son iguales";
+          }
+        }
+
+        //console.log(resultado);
+        //mostrar resultado
+        document.getElementById("pantallaResultado").innerHTML =
+          "Resultado: " + resultado;
+      }
+    </script>
+  </body>
+</html>

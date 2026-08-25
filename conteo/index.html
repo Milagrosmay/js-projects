@@ -3,21 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Coiny&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Contador</title>
   </head>
   <body>
-    <h1>Conteo</h1>
-    <form>
-      <label for="conteoUsuario"
-        >indique el numero, para realizar el conteo</label
-      >
-      <br />
-      <br />
-      <input type="number" id="numero" placeholder="ingrese numero" />
-      <button type="button" onclick="contador()" id="boton">Contar</button>
-    </form>
-    <p id="pantalla"></p>
-
+    <div class="contenedor">
+      <h1 class="titulo">Conteo</h1>
+      <form>
+        <label for="conteoUsuario"
+          >indique el numero, para realizar el conteo</label
+        >
+        <br />
+        <br />
+        <input type="number" id="numero" placeholder="ingrese numero" />
+        <br />
+        <br />
+        <button type="button" onclick="contador()" id="boton">Contar</button>
+      </form>
+      <p id="pantalla"></p>
+    </div>
     <script>
       function contador() {
         let numero = document.getElementById("numero").value;
@@ -26,16 +36,16 @@
         if (!numero) {
           alert("ingrese un numero para hacer el conteo");
           return;
-        } else {
-          numero = parseInt(numero);
-          console.log("conteo: ");
-
-          for (let i = 0; i <= numero; i++) {
-            resultado += i + ", ";
-          }
-          document.getElementById("pantalla").innerHTML =
-            "Resultado: " + resultado;
         }
+        // } else {
+        resultado = "Conteo:  <br>";
+        numero = parseInt(numero);
+
+        for (let i = 1; i <= numero; i++) {
+          resultado += i + ", ";
+        }
+        document.getElementById("pantalla").innerHTML = resultado;
+        // }
       }
     </script>
   </body>

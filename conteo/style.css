@@ -17,19 +17,19 @@ body {
 .titulo {
   font-weight: 100;
   font-size: 60px;
-  width: 90%;
+  width: 100%;
   padding: 10px;
 }
 
 .contenedor {
   font-size: 25px;
   width: 90%;
-  max-width: 500px;
+  max-width: 600px;
   padding: 40px;
   margin-top: 20px;
 
   background-color: #c5b3d3;
-  box-shadow: 0 5px 10px #000000;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
 }
 
@@ -42,13 +42,31 @@ input[type="number"] {
   box-shadow: 0 5px 10px #7e7e7e;
   color: #000000;
   font-size: 20px;
-  transition: transform 0.4s;
 }
 
 button {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
+  border: none;
   border-radius: 15px;
-  transition: 0.4s;
   padding: 10px 20px;
 }
+button:hover{
+  background-color: #FDF4D2;
+  transform: translateY(-3px);
+}
+
+#pantalla{
+  font-size: 25px;
+  width: 80%;
+  max-width: 300px;
+  padding: 30px;
+
+  background-color: rgb(255, 226, 226);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: block;
+  margin: 20px auto 0 auto;
+
+}
+

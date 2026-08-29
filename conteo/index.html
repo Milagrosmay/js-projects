@@ -24,13 +24,24 @@
         <input type="number" id="numero" placeholder="ingrese numero" />
         <br />
         <br />
-        <button type="button" onclick="contador()" id="boton">Contar</button>
+        <button type="button" onclick="accionPrincipal()" id="boton">
+          Contar
+        </button>
+        <button type="button" onclick="reiniciar()" id="boton">
+          Reiniciar
+        </button>
+
       </form>
       <div>
         <p id="pantalla"></p>
       </div>
     </div>
     <script>
+      function accionPrincipal() {
+        contador();
+        aparecerConteo();
+      }
+
       function contador() {
         let numero = document.getElementById("numero").value;
         let resultado = "";
@@ -53,6 +64,13 @@
         document.getElementById("pantalla").innerHTML = resultado;
         // }
       }
+
+      function aparecerConteo() {
+        // document.getElementById("pantalla").style.visibility = "visible" hace visible el elemento
+        document.getElementById("pantalla").style.display = "block"; //coloca el elemento
+      }
+        
+
     </script>
   </body>
 </html>

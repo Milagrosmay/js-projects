@@ -31,11 +31,13 @@ body {
   background-color: #c5b3d3;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
+  margin-bottom: 100px;
 }
+
 
 input[type="number"] {
   width: 80%;
-  padding: 14px;
+  padding: 20px 14px;
   margin: 8px;
   border-radius: 20px;
   border: none;
@@ -49,7 +51,9 @@ button {
   font-size: 30px;
   border: none;
   border-radius: 15px;
-  padding: 10px 20px;
+  padding: 5px 20px;
+  align-items: center;
+  justify-content: center;
 }
 button:hover{
   background-color: #FDF4D2;
@@ -58,9 +62,9 @@ button:hover{
 
 #pantalla{
   font-size: 25px;
-  width: 80%;
-  max-width: 300px;
-  padding: 30px;
+  min-width: 50%;
+  max-width: 100%;
+  padding: 20px;
 
   background-color: rgb(255, 226, 226);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);

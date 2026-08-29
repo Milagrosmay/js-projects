@@ -15,44 +15,60 @@
   <body>
     <div class="contenedor">
       <h1 class="titulo">Conteo</h1>
-      <form>
+      <form id="formulario">
         <label for="conteoUsuario"
           >indique el numero, para realizar el conteo</label
         >
         <br />
         <br />
-        <input type="number" id="numero" placeholder="ingrese numero" />
+        <div style="flex-direction: row; display: flex">
+          <input type="number" id="numero" placeholder="ingrese numero" />
+          <button type="button" onclick="reiniciar()" id="boton">
+            <svg
+              style="padding-top: 10px"
+              xmlns="http://www.w3.org/2000/svg"
+              height="50px"
+              viewBox="0 -960 960 960"
+              width="50px"
+              fill="#1f1f1f"
+            >
+              <path
+                d="M451-122q-123-10-207-101t-84-216q0-77 35.5-145T295-695l43 43q-56 33-87 90.5T220-439q0 100 66 173t165 84v60Zm60 0v-60q100-12 165-84.5T741-439q0-109-75.5-184.5T481-699h-20l60 60-43 43-133-133 133-133 43 43-60 60h20q134 0 227 93.5T801-439q0 125-83.5 216T511-122Z"
+              />
+            </svg>
+          </button>
+        </div>
         <br />
         <br />
-        <button type="button" onclick="accionPrincipal()" id="boton">
-          Contar
-        </button>
-        <button type="button" onclick="reiniciar()" id="boton">
-          Reiniciar
-        </button>
-
+        <button type="button" onclick="contador()" id="boton">Contar</button>
       </form>
       <div>
         <p id="pantalla"></p>
       </div>
     </div>
     <script>
-      function accionPrincipal() {
-        contador();
-        aparecerConteo();
-      }
+      let = numero;
+      let resultado = "";
+      const numeroInput = document.getElementById("numero");
 
       function contador() {
-        let numero = document.getElementById("numero").value;
-        let resultado = "";
+        numero = numeroInput.value;
+        // let resultado = "";
 
         if (!numero) {
           alert("ingrese un numero para hacer el conteo");
           return;
         }
-        // } else {
-        resultado = "Conteo:  <br>";
+        
         numero = parseInt(numero);
+
+        if (numero > 100) {
+          alert("Ingrese un numero menor a 100");
+          return;
+        }
+
+        mostrarPantalla();
+        resultado = "Conteo:  <br>";
 
         for (let i = 1; i <= numero; i++) {
           resultado += i;
@@ -62,15 +78,17 @@
           }
         }
         document.getElementById("pantalla").innerHTML = resultado;
-        // }
       }
 
-      function aparecerConteo() {
+      function mostrarPantalla() {
         // document.getElementById("pantalla").style.visibility = "visible" hace visible el elemento
         document.getElementById("pantalla").style.display = "block"; //coloca el elemento
       }
-        
 
+      function reiniciar() {
+        numeroInput.value = "";
+        document.getElementById("pantalla").style.display = "none";
+      }
     </script>
   </body>
 </html>

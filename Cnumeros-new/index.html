@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Coiny&family=Lobster&family=Story+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Comparador de numeros</title>
+  </head>
+  <body>
+    <h1 class="titulo">COMPARADOR DE TRES NUMEROS</h1>
+    <div class="formulario">
+      <form>
+        <label for="numero1">numero 1</label>
+        <br />
+        <input
+          type="number"
+          name="numero1"
+          id="numero1"
+          placeholder="Primer numero"
+        />
+        <br />
+        <br />
+        <label for="numero2">numero 2</label>
+        <br />
+        <input
+          type="number"
+          name="numero2"
+          id="numero2"
+          placeholder="Segundo numero"
+        />
+        <br />
+        <br />
+        <label for="numero3">numero 3</label>
+        <br />
+        <input
+          type="number"
+          name="numero3"
+          id="numero3"
+          placeholder="Tercer numero"
+        />
+        <br />
+        <br />
+        <button type="button" onclick="comparadorNumeros()" id="boton">
+          Comparar
+        </button>
+      </form>
+      <p id="pantalla"></p>
+    </div>
+
+    <script>
+      function comparadorNumeros() {
+        const numeroInput1 = parseInt(document.getElementById("numero1").value);
+        const numeroInput2 = parseInt(document.getElementById("numero2").value);
+        const numeroInput3 = parseInt(document.getElementById("numero3").value);
+        let resultado = "";
+
+        if (!numeroInput1 || !numeroInput2 || !numeroInput3) {
+          alert("Rellene todos los campos");
+          return;
+        }
+        //  const orden = [numeroInput1, numeroInput2, numeroInput3].sort((a, b) => b - a);
+        const numerposOrdenados = [
+          numeroInput1,
+          numeroInput2,
+          numeroInput3,
+        ].sort(function (a, b) {
+          return b - a;
+        });
+
+        mostrarPantalla();
+
+        for (let i = 0; i < numerposOrdenados.length; i++) {
+          resultado += numerposOrdenados[i];
+          // resultado += numerposOrdenados[i] + "<br>";
+          if (i < numerposOrdenados.length - 1) {
+            resultado += ", ";
+          }
+        }
+        document.getElementById("pantalla").innerHTML = resultado;
+      }
+      function mostrarPantalla() {
+        // document.getElementById("pantalla").style.visibility = "visible" hace visible el elemento
+        document.getElementById("pantalla").style.display = "block"; //coloca el elemento
+      }
+    </script>
+  </body>
+</html>

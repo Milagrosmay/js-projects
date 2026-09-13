@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+font-family: "Story Script", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(227, 250, 223);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo {
+  font-weight: 100;
+  font-size: 60px;
+  width: 100%;
+  padding: 10px;
+}
+
+.formulario {
+  font-size: 25px;
+  width: 90%;
+  max-width: 600px;
+  padding: 40px;
+  margin-top: 20px;
+
+  background-color: #55eff5;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin-bottom: 100px;
+}
+
+
+input[type="number"] {
+  width: 80%;
+  padding: 20px 14px;
+  margin: 8px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 5px 10px #7e7e7e;
+  color: #000000;
+  font-size: 20px;
+}
+
+button {
+  cursor: pointer;
+  font-size: 30px;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 20px;
+  align-items: center;
+  justify-content: center;
+}
+button:hover{
+  background-color: #FDF4D2;
+  transform: translateY(-3px);
+}
+
+#pantalla{
+  font-size: 25px;
+  min-width: 50%;
+  max-width: 100%;
+  padding: 20px;
+
+  background-color: rgb(212, 252, 147);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: none; /*quita el elemento*/
+  margin: 20px auto 0 auto;
+
+
+}

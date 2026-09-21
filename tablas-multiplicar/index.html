@@ -4,62 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Risque&display=swap"
+      rel="stylesheet"
+    />
     <title>Tablas de multiplicar</title>
   </head>
   <body>
-    <h1 class="titulo">Multiplicacion</h1>
-    <div class="formulario">
-      <form>
-        <label for="numero1"
-          >Ingrese el numero del cual desea la tabla de multiplicar</label
-        >
-        <br />
-        <input
-          type="number"
-          name="numero1"
-          id="numero1"
-          placeholder="Primer numero"
-        />
-        <br />
-        <br />
-        <label for="numero2"
-          >Ingrese hasta que numero quiere que se muestre las
-          multiplicaciones</label
-        >
-        <br />
-        <input
-          type="number"
-          name="numero2"
-          id="numero2"
-          placeholder="Segundo numero"
-        />
-        <br />
-        <br />
+    <h1 class="titulo">Multiplicación</h1>
+    <div>
+      <form class="formulario">
+        <div class="cajas">
+          <div class="item">
+            <label for="numero1">
+              Ingrese el numero del cual desea la tabla de multiplicar
+            </label>
+
+            <input
+              type="number"
+              name="numero1"
+              id="numero1"
+              placeholder="Primer numero"
+            />
+          </div>
+
+          <div class="item">
+            <label for="numero2"> Ingrese hasta que numero multiplicar </label>
+
+            <input
+              type="number"
+              name="numero2"
+              id="numero2"
+              placeholder="Segundo numero"
+            />
+          </div>
+        </div>
         <button type="button" onclick="multiplicar()" id="boton">
           Multiplicar
         </button>
       </form>
       <p id="pantallaResultado"></p>
     </div>
-    <script>
-      
 
+    <script>
       function multiplicar() {
         let numeroUno = document.getElementById("numero1").value;
         let numeroDos = document.getElementById("numero2").value;
         let resultado = "";
 
+        if (!numeroUno || !numeroDos) {
+          alert("Ingrese un numero para realizar las multiplicaciones");
+          return;
+        }
+
         numeroUno = parseInt(numeroUno);
         numeroDos = parseInt(numeroDos);
 
-        for (let i = 1; i <= numeroDos; i++) {
-          let operacion = numeroUno + " * " + i + " = " + numeroUno * i;
-          resultado += operacion + "<br>";
-
-          // resultado = i*numeroDos;
-          // console.log(resultado);
-          
+        if (typeof numeroDos != "number" || typeof numeroUno != "number") {
+          alert("El número es inválido");
+          return;
         }
+
+        if (numeroDos > 30 || numeroDos < 1) {
+          alert("El número es inválido");
+          return;
+        }
+
+        document.getElementById("pantallaResultado").style.display = "block"; //coloca el elemento
+
+        for (let i = 1; i <= numeroDos; i++) {
+          resultado += numeroUno + " * " + i + " = " + numeroUno * i + "<br>";
+        }
+
         document.getElementById("pantallaResultado").innerHTML = resultado;
       }
     </script>

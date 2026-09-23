@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=+, initial-scale=1.0" />
+    <title>Descuentos</title>
+  </head>
+  <body>
+    <h1 class="titulo">Aplicador de Descuentos</h1>
+    <form id="formulario">
+      <label for="inputUsuario"> Ingrese el valor de la compra </label>
+      <br />
+      <br />
+      <input type="number" id="precio" placeholder="ingrese valor" />
+
+      <br />
+      <br />
+      <button type="button" onclick="aplicarDescuento()" id="boton">
+        Aplicar
+      </button>
+    </form>
+
+    <p id="pantallaMostrar"></p>
+
+    <script>
+      function aplicarDescuento() {
+        let precioValor = document.getElementById("precio").value;
+        let resultado = "";
+        let precioFinal;
+
+        //validacion si hay valor
+
+        if (!precioValor) {
+          alert("Ingrese el precio");
+          return;
+        }
+
+        precioValor = parseInt(precioValor);
+
+        if (precioValor < 50000) {
+          resultado = "No hay descuento";
+        } else if (precioValor >= 50000 && precioValor <= 100000) {
+            resultado = "DESCUENTO APLICADO"
+          precioFinal = (precioValor * 10) / 100;
+          precioFinal = precioValor - precioFinal;
+          resultado = "DESCUENTO APLICADO <br>"+ precioValor + " ---> " + "precio con descuento aplicado = " + precioFinal;
+        } else if (precioValor > 100000) {
+          precioFinal = (precioValor * 20) / 100;
+          precioFinal = precioValor - precioFinal;
+          resultado ="DESCUENTO APLICADO <br>"+ precioValor + " ---> " + "precio con descuento aplicado = " + precioFinal;
+        }
+        //console.log(resultado);
+        //mostrar resultado
+        document.getElementById("pantallaMostrar").innerHTML =
+          "Resultado: " + resultado;
+      }
+    </script>
+  </body>
+</html>

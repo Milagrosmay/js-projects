@@ -3,26 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=+, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap"
+      rel="stylesheet"
+    />
     <title>Descuentos</title>
   </head>
   <body>
-    <h1 class="titulo">Aplicador de Descuentos</h1>
-    <form id="formulario">
-      <label for="inputUsuario"> Ingrese el valor de la compra </label>
-      <br />
-      <br />
-      <input type="number" id="precio" placeholder="ingrese valor" />
+    <div class="caja">
+      <h1 class="titulo">Aplicador de Descuentos</h1>
+      <form id="formulario">
+        <label for="inputUsuario"> Ingrese el valor de la compra </label>
 
-      <br />
-      <br />
-      <button type="button" onclick="aplicarDescuento()" id="boton">
-        Aplicar
-      </button>
-    </form>
+        <input type="number" id="precio" placeholder="ingrese valor" required />
 
-    <p id="pantallaMostrar"></p>
+        <button type="button" onclick="aplicarDescuento()" id="boton">
+          Aplicar
+        </button>
+      </form>
 
+      <p id="pantallaMostrar"></p>
+    </div>
     <script>
+      function formatearNumero(numero) {
+        return new Intl.NumberFormat("es-CO").format(numero);
+      }
+
       function aplicarDescuento() {
         let precioValor = document.getElementById("precio").value;
         let resultado = "";
@@ -37,22 +46,35 @@
 
         precioValor = parseInt(precioValor);
 
+        if (typeof precioValor != "number") {
+          alert("El número es inválido");
+          return;
+        }
+
         if (precioValor < 50000) {
           resultado = "No hay descuento";
         } else if (precioValor >= 50000 && precioValor <= 100000) {
-            resultado = "DESCUENTO APLICADO"
+          resultado = "DESCUENTO APLICADO del 10%";
           precioFinal = (precioValor * 10) / 100;
           precioFinal = precioValor - precioFinal;
-          resultado = "DESCUENTO APLICADO <br>"+ precioValor + " ---> " + "precio con descuento aplicado = " + precioFinal;
+          resultado =
+            "DESCUENTO APLICADO <br>" +
+            formatearNumero(precioValor) +
+            " ---> " +
+            "precio con descuento aplicado = " +
+             formatearNumero(precioFinal);
         } else if (precioValor > 100000) {
           precioFinal = (precioValor * 20) / 100;
           precioFinal = precioValor - precioFinal;
-          resultado ="DESCUENTO APLICADO <br>"+ precioValor + " ---> " + "precio con descuento aplicado = " + precioFinal;
+          resultado =
+            "DESCUENTO APLICADO del 20% <br>" +
+            formatearNumero(precioValor) +
+            " ---> " +
+            "precio con descuento aplicado = " +
+            formatearNumero(precioFinal);
         }
-        //console.log(resultado);
-        //mostrar resultado
-        document.getElementById("pantallaMostrar").innerHTML =
-          "Resultado: " + resultado;
+
+        document.getElementById("pantallaMostrar").innerHTML = resultado;
       }
     </script>
   </body>

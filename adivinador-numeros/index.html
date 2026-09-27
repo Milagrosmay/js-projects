@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivinador de Numeros</title>
+  </head>
+  <body>
+    <div class="caja">
+      <h1 class="titulo">Adivinador de Numeros</h1>
+      <form id="formulario">
+        <label for="inputUsuario"> Ingrese el numero </label>
+        <input
+          type="number"
+          id="numeroUsuario"
+          placeholder="ingrese numero"
+          required
+        />
+
+        <button type="button" onclick="adivinarNumero()" id="boton">
+          Adivina
+        </button>
+      </form>
+
+      <p id="pantallaMostrar"></p>
+    </div>
+    <script>
+      let numero = Math.floor(Math.random() * 20) + 1;
+
+      function adivinarNumero() {
+        let numeroUsuario = document.getElementById("numeroUsuario").value;
+        let resultado = "";
+
+        if (!numeroUsuario) {
+          alert("ingrese un numero");
+          return;
+        }
+
+        numeroUsuario = parseInt(numeroUsuario);
+
+        if (numeroUsuario > numero) {
+          // resultado = "el numero es menor";
+          const mensajesMayor = [
+            "El número secreto es menor.",
+            "El número ingresado es muy alto.",
+            "Intente con un número más pequeño.",
+            "Ese número está por encima del secreto.",
+            "El numero ingresado esta muy por encima.",
+            "Pruebe con un número menor.",
+          ];
+          let azar = Math.floor(Math.random() * mensajesMayor.length);
+          resultado = mensajesMayor[azar];
+        } else if (numeroUsuario < numero) {
+          // resultado = " el numero es mayor";
+          const mensajesMenor = [
+            "El número es mayor.",
+            "El número ingresado es muy bajo.",
+            "Intente con un número más grande.",
+            "Te falta aumentar un poco.",
+            "El número secreto es mayor.",
+            "Ese número ingresado está por debajo del secreto.",
+          ];
+
+          let azar = Math.floor(Math.random() * mensajesMenor.length);
+          resultado = mensajesMenor[azar];
+
+        } else {
+          resultado = "el numero es correcto !!!";
+        }
+
+        document.getElementById("pantallaMostrar").innerHTML = resultado;
+      }
+    </script>
+  </body>
+</html>

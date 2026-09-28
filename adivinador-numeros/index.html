@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Adivinador de Numeros</title>
   </head>
   <body>
@@ -27,42 +34,56 @@
     </div>
     <script>
       let numero = Math.floor(Math.random() * 20) + 1;
+      let indexAnterior = 0;
+      const mensajesMenor = [
+        "El número secreto es menor.",
+        "El número ingresado es muy alto.",
+        "Intente con un número más pequeño.",
+        "Ese número está por encima del secreto.",
+        "El numero ingresado esta muy por encima.",
+        "Pruebe con un número menor.",
+      ];
+      const mensajesMayor = [
+        "El número es mayor.",
+        "El número ingresado es muy bajo.",
+        "Intente con un número más grande.",
+        "Te falta aumentar un poco.",
+        "El número secreto es mayor.",
+        "Ese número ingresado está por debajo del secreto.",
+      ];
 
       function adivinarNumero() {
         let numeroUsuario = document.getElementById("numeroUsuario").value;
-        let resultado = "";
-        const mensajesMenor = [
-          "El número secreto es menor.",
-          "El número ingresado es muy alto.",
-          "Intente con un número más pequeño.",
-          "Ese número está por encima del secreto.",
-          "El numero ingresado esta muy por encima.",
-          "Pruebe con un número menor.",
-        ];
-        const mensajesMayor = [
-          "El número es mayor.",
-          "El número ingresado es muy bajo.",
-          "Intente con un número más grande.",
-          "Te falta aumentar un poco.",
-          "El número secreto es mayor.",
-          "Ese número ingresado está por debajo del secreto.",
-        ];
-
+        let resultado = "Cargando...";
+        document.getElementById("pantallaMostrar").innerHTML = resultado;
         if (!numeroUsuario) {
           alert("ingrese un numero");
+          document.getElementById("pantallaMostrar").innerHTML =
+            "Ingrese un numero valido";
           return;
         }
 
         numeroUsuario = parseInt(numeroUsuario);
+        if (numeroUsuario < 1 || numeroUsuario > 20) {
+          alert("debe ingresar un numero entre 1 y 20");
+          document.getElementById("pantallaMostrar").innerHTML =
+            "Ingrese un numero";
+          return;
+        }
+
+        let azar = Math.floor(Math.random() * mensajesMenor.length);
+
+        while (azar == indexAnterior) {
+          console.log("Dentro del while", azar);
+          azar = Math.floor(Math.random() * mensajesMenor.length);
+        }
+        indexAnterior = azar;
 
         if (numeroUsuario > numero) {
           // resultado = "el numero es menor";
-          let azar = Math.floor(Math.random() * mensajesMenor.length);
           resultado = mensajesMenor[azar];
         } else if (numeroUsuario < numero) {
           // resultado = " el numero es mayor";
-
-          let azar = Math.floor(Math.random() * mensajesMayor.length);
           resultado = mensajesMayor[azar];
         } else {
           resultado = "el numero es correcto !!!";
